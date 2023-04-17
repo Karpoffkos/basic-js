@@ -16,8 +16,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 function createDreamTeam(arr) {
  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
-  console.log(arr, 00000000000000000000000000000000000000000000000000000000000034)
-  if( typeof arr !== 'object'){return false}
+  //console.log(arr, 00000000000000000000000000000000000000000000000000000000000034)
+  if (!Array.isArray(arr)){return false};
   let letterArr = [];
   let firstletter = [];
   function defineString(item){
@@ -29,9 +29,9 @@ function createDreamTeam(arr) {
   arr.forEach(element => {
     defineString(element);
   });
-  letterArr.forEach(el => firstletter.push(el[0].toUpperCase()))
-  let string = firstletter.sort((a,b) => a>b).join();
-  console.log(string, 00000000000000000000000000000000000000000000000000000000000034)
+  letterArr.forEach(el => firstletter.push(el.trim().slice(0,1).toUpperCase()))
+  let string = firstletter.sort().join('');
+  //console.log(string, 00000000000000000000000000000000000000000000000000000000000034)
   return string;
  
 }
